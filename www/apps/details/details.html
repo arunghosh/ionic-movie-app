@@ -1,0 +1,22 @@
+<ion-view view-title="{{movie.title}}({{movie.year}})">
+  <ion-content>
+    <div class="item-thumbnail-left">
+      <img ng-src="{{movie.posters.thumbnail}}">
+      <p class="wrap">{{movie.synopsis}}</p>
+    </div>
+
+    <div class="heading">Cast</div>
+    <div class="row" ng-repeat="c in movie.abridged_cast">
+      <div class="col col-33">{{c.name}}</div>
+      <div class="col col-33">{{c.characters[0]}}</div>
+    </div>
+
+    <div class="heading">Reviews</div>
+    <ion-list>
+      <ion-item ng-repeat="r in reviews">
+        <h2>{{r.critic}} {{r.original_score}}</h2>
+        <p class="wrap">{{r.quote}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

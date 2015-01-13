@@ -1,0 +1,17 @@
+<ion-view hide-nav-bar="true">
+  <ion-content>
+    <div class="bar bar-header item-input-inset">
+      <label class="item-input">
+        <i class="icon ion-search placeholder-icon search-icon"></i>
+        <input ng-model="query.title" type="search" placeholder="Movie name">
+      </label>
+    </div>
+    <ion-list>
+      <ion-item class="item item-thumbnail-left" ng-repeat="m in movies" ng-click="showDetails(m)">
+        <img ng-src="{{m.posters.thumbnail}}" />
+        <h2>{{m.title}}</h2>
+        <p>{{m.year}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
